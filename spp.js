@@ -16,5 +16,11 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res){
     var userName = req.body.userName;
-    res.send(userName);
+    var ei = req.body.email;
+    var pw = req.body.password;
+    res.sendFile(__dirname+"/failure.html");
+});
+
+app.post("/fail", function(req,res){
+    res.redirect("/");
 })
